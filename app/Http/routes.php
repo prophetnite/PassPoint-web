@@ -11,40 +11,32 @@
 |
 */
 
+Route::get('profile', ['middleware' => 'auth', function() {
+    // Only authenticated users may enter...
+	Route::get('/dashboard', function () {
+	    return view('dashboard');
+	});
+
+	Route::get('/deploy', function () {
+	    return view('deploy');
+	});
+
+	Route::get('/profile', function () {
+	    return view('profile');
+	});
+
+	Route::get('/support', function () {
+	    return view('support');
+	});
+
+	Route::get('/blog', function () {
+	    return view('blog');
+	});
+}]);
+
+
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/deploy', function () {
-    return view('deploy');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::get('/support', function () {
-    return view('support');
-});
-
-Route::get('/blog', function () {
-    return view('blog');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/logout', function () {
-    return view('logout');
-});
-
-Route::get('/register', function () {
-    return view('register');
+    return view('landing');
 });
 
 Route::get('/forgotpass', function () {
@@ -55,6 +47,25 @@ Route::get('/404', function () {
     return view('404');
 });
 
-Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
+Route::get('/login', 'Auth\AuthController@getLogin');
+Route::get('/logout', 'Auth\AuthController@getLogout');
+Route::get('/register', 'Auth\AuthController@getRegister');
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');

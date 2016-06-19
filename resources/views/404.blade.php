@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
 
     <!-- Page title -->
-    <title>LUNA | Responsive Admin Theme</title>
+    <title>PassPoint | Windows Credential Monitoring and Auditing</title>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -31,7 +31,7 @@
     <!-- Main content-->
     <section class="content">
         <div class="back-link">
-            <a href="index.html" class="btn btn-accent">Back to Dashboard</a>
+            <a href="/dashboard" class="btn btn-accent">Back to Dashboard</a>
         </div>
 
         <div class="container-center md animated slideInDown">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div>
-                <a href="index.html" class="btn btn-accent">Back to app</a>
+                <a href="/dashboard" class="btn btn-accent">Back to app</a>
             </div>
 
         </div>

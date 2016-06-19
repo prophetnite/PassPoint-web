@@ -10,7 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
 
     <!-- Page title -->
-    <title>LUNA | Responsive Admin Theme</title>
+    <title>PassPoint | Windows Credential Monitoring and Auditing</title>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -55,26 +55,26 @@
                     <p>
 
                     </p>
-                    <form action="/register" id="loginForm" novalidate>
+                    <form method="POST" action="/auth/register" id="loginForm" novalidate>
                         <div class="row">
                             <div class="form-group col-lg-6">
-                                <label>Username</label>
-                                <input type="" value="" id="username" class="form-control" name="">
-                                <span class="help-block small">Your unique username to app</span>
+                                <label>Name</label>
+                                <input type="text" name="name" value="{{ old('name') }}" class="form-control">
+                                <span class="help-block small">Your actual human name</span>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Password</label>
-                                <input type="password" value="" id="password" class="form-control" name="">
+                                <input type="password" name="password" id="password" class="form-control">
                                 <span class="help-block small">Your hard to guess password</span>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Repeat Password</label>
-                                <input type="password" value="" id="repeatpassword" class="form-control" name="">
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control">
                                 <span class="help-block small">Please repeat your pasword</span>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label>Email Address</label>
-                                <input type="" value="" id="email" class="form-control" name="">
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control">
                                 <span class="help-block small">Your address email to contact</span>
                             </div>
                         </div>
