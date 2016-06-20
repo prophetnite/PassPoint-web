@@ -11,30 +11,29 @@
 |
 */
 
-Route::get('profile', ['middleware' => 'auth', function() {
-    // Only authenticated users may enter...
-	Route::get('/dashboard', function () {
-	    return view('dashboard');
-	});
+// -----------------AUTHENTICATED ROUTES ------------------//
+Route::get('/dashboard', ['middleware' => 'auth', function() {
+    return view('/dashboard');
+}]);
 
-	Route::get('/deploy', function () {
-	    return view('deploy');
-	});
+Route::get('/deploy', ['middleware' => 'auth', function () {
+    return view('deploy');
+}]);
 
-	Route::get('/profile', function () {
-	    return view('profile');
-	});
+Route::get('/profile', ['middleware' => 'auth', function () {
+    return view('profile');
+}]);
 
-	Route::get('/support', function () {
-	    return view('support');
-	});
+Route::get('/support', ['middleware' => 'auth', function () {
+    return view('support');
+}]);
 
-	Route::get('/blog', function () {
-	    return view('blog');
-	});
+Route::get('/blog', ['middleware' => 'auth', function () {
+    return view('blog');
 }]);
 
 
+// -----------------PUBLIC  ROUTES ------------------//
 Route::get('/', function () {
     return view('landing');
 });
@@ -48,7 +47,7 @@ Route::get('/404', function () {
 });
 
 
-
+// -----------------AUTHENTICATION------------------//
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
 Route::get('/register', 'Auth\AuthController@getRegister');
