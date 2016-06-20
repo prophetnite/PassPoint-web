@@ -113,9 +113,9 @@
         </div>
 
         <!-- Video Player -->
-        <!-- <div class="video-player" data-property="{ videoURL: 'https://youtu.be/boSyW4obX4k', containment: '#home', quality: 'large',
+        <div class="video-player" data-property="{ videoURL: 'https://youtu.be/boSyW4obX4k', containment: '#home', quality: 'large',
             startAt: 2.5, autoPlay: true,loop: true, opacity: 1, showControls: false, showYTLogo: false, vol: 0, mute: true }">
-        </div> -->
+        </div> 
     </section>
 
 
@@ -124,7 +124,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
-                    <h2>"We work in consulting, technology, outsourcing &amp; next-generation services"
+                    <h2>"WWe work in toasting, burning, and eating toast"
                     <br><small>ToastyStoemp / Chief Toast Taster Tooty</small></h2>
                 </div>
             </div>

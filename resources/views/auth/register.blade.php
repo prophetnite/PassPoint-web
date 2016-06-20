@@ -59,26 +59,65 @@
                     <form method="POST" action="/auth/register" id="loginForm" novalidate>
                     {!! csrf_field() !!}
                         <div class="row">
-                            <div class="form-group col-lg-6">
+
+
+                            <div class="form-group col-lg-6 {{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label>Name</label>
                                 <input type="text" name="name" value="{{ old('name') }}" class="form-control">
                                 <span class="help-block small">Your actual human name</span>
+
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+
                             </div>
-                            <div class="form-group col-lg-6">
+
+
+                            <div class="form-group col-lg-6 {{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label>Password</label>
                                 <input type="password" name="password" id="password" class="form-control">
                                 <span class="help-block small">Your hard to guess password</span>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+
                             </div>
-                            <div class="form-group col-lg-6">
+
+
+                            <div class="form-group col-lg-6 {{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                                 <label>Repeat Password</label>
                                 <input type="password" name="password_confirmation" value="" class="form-control">
                                 <span class="help-block small">Please repeat your pasword</span>
+
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+
                             </div>
-                            <div class="form-group col-lg-6">
+
+
+                            <div class="form-group col-lg-6 {{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label>Email Address</label>
                                 <input type="email" name="email" value="{{ old('email') }}" class="form-control">
                                 <span class="help-block small">Your address email to contact</span>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+
                             </div>
+
+
                         </div>
                         <div>
                             <button class="btn btn-accent" type="submit">Register</button>

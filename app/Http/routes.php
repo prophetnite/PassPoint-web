@@ -46,7 +46,6 @@ Route::get('/404', function () {
     return view('404');
 });
 
-
 // -----------------AUTHENTICATION------------------//
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
